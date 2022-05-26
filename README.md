@@ -24,25 +24,30 @@ In Azure create a Resource that you will use throughout this project. All resour
 <br />
                                                                                            
 <b> Step 2: Create a VM</b> <br/>
-In Azure create a Virtual Machine. This VM is going to act as a "honeypot" so we want it to be unsecured so it is more easily discovered by attackers. Select "Advanced" for "NIC network security group" and click "Create new." <br/>
-<img src="https://imgur.com/6JmPfBi.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+In Azure create Virtual Machine using the resource group you created.<br/>
+<img src="https://imgur.com/J9Q4FBp.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
 <br />
-<br />
+<br />   
                                                                                             
 <b> Step 3: Add a username and password</b> <br/>
 In Azure create a username and password for your VM. Be sure to remember this as you will need it to RDP into your VM later. <b>*(TIP: Avoid common usernames like: Admin, Administrator, or User)*</b> <br/>
 <img src="https://imgur.com/FtJVbm7.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
 <br />
-<br />                                                                                            
-<b> Step 4: Edit the NIC NSG</b> <br/>
+<br />     
+<b> Step 4: Edit the Networking tab</b> <br/>
+This VM is going to act as a "honeypot" so we want it to be unsecured so it is more easily discovered by attackers. In the Networking tab while creating the VM select "Advanced" for "NIC network security group" and click "Create new." <br/>
+<img src="https://imgur.com/6JmPfBi.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+<br />
+<br />
+<b> Step 5: Edit the NIC NSG</b> <br/>
 In Azure remove the default inbound rule and add a new inbound rule. Since we want this VM to be discoverable create the new rule to allow any/any inbound traffic and set the priority low (ex: 100) <br/>
 <img src="https://imgur.com/syB8VS9.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
 <br />
 <br />
                                                                                               
-<b> Step 5: </b> <br/>
-In Azure create a Virtual Machine. This VM is going to act as a "honeypot" so we want it to be unsecured so it is more easily discovered by attackers <br/>
-<img src="https://i.imgur.com/cdFHBiU.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+<b> Step 6: Review and Create</b> <br/>
+Accept the default settings for the VM and click "Review & Create." Once validation has passed click "Create" <br/>
+<img src="https://imgur.com/FcjHeuW.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
 <br />
 <br />
 Wait for process to complete (may take some time):  <br/>
