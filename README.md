@@ -105,7 +105,8 @@ In your VM open Microsoft Edge and navigate to https://ipgeolocation.io and clic
 <br />
 
 <b> Step 15: Open ISE</b> <br/>
-In your VM open PowerShell ISE. Paste the PowerShell code into ISE. Go back to the API site and copy the API key. Back in ISE edit line 2, paste your copied API key here. Save the code to your desktop by clicking File>Save As. <br/>
+In your VM open PowerShell ISE. Paste the PowerShell code below into ISE. Go back to the API site and copy the API key. Back in ISE edit line 2, paste your copied API key here. Save the code to your desktop by clicking File>Save As. <br/>
+  - [PowerShellScript](https://github.com/Olivia-Keiter/AzureSentielLab/blob/main/CustomSecurityLog.ps1)
 <img src="https://imgur.com/pxyzIlq.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
 <br />
 <br />
