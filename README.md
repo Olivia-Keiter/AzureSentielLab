@@ -85,11 +85,74 @@ In Azure go to Microsoft Sentinel. Select your workspace and click "Add" <br/>
 <br />
 <br />
 
-<b> Step 1: Add Microsoft Sentinel to a workspace</b> <br/>
-In Azure go to Microsoft Sentinel. Select your workspace and click "Add" <br/>
-<img src="https://imgur.com/HaABVPo.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+<b> Step 12: Connect to your VM using RDP</b> <br/>
+In Azure go to the VM you created for this lab. Click "Connect">"RDP." Download the RDP file and connect using the username/password you created earlier. In the VM search for "Event Viewer." Expand "windows Logs" then "Security." <br/>
+<img src="https://imgur.com/eRj6jjF.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
 <br />
 <br />
+
+<b> Step 13: View Event Viewer</b> <br/>
+In your VM view some of the logs. For this lab we will be focused on event ID 4625. At this point, you should not have any of those logs. To create one attempt to RDP into your VM from your home compute again, this time using an incorrect username or password. When you look at the event viewer after failing to logon you will find a log with event ID 4625 (Audit Failure.)  <br/>
+<img src="https://imgur.com/pxyzIlq.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+<br />
+<br />
+
+<b> Step 14: Go to API site</b> <br/>
+In your VM open Microsoft Edge and navigate to https://ipgeolocation.io and click "Get Free API Access." This API will provide the geolocation of our attackers. Keep this tab open, you will use it later. <br/>
+<img src="https://imgur.com/BZoskOK.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+<img src="https://imgur.com/WOZDcwl.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+<br />
+<br />
+
+<b> Step 15: Open ISE</b> <br/>
+In your VM open PowerShell ISE. Paste the PowerShell code into ISE. Go back to the API site and copy the API key. Back in ISE edit line 2, paste your copied API key here. Save the code to your desktop by clicking File>Save As. <br/>
+<img src="https://imgur.com/pxyzIlq.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+<br />
+<br />
+
+<b> Step 16: Ping your VM </b> <br/>
+On your local computer open the command line. Ping your VMs public IP using -t to run the ping until you tell it to stop, you should see "Request timed out." <br/>
+<img src="https://imgur.com/x6bfV9J.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+<br />
+<br />
+
+<b> Step 17: Disable Windows Firewall </b> <br/>
+On your VM search for Windows Defender Firewall and click "Turn Windows Defender Firewall on or off." <br/>
+<img src="https://imgur.com/VAjp4SP.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+Click "Turn off Windows Defender Firewall(not recommended) for both Private and Public network settings. Click OK to apply your changes <br/>
+<img src="https://imgur.com/mKQVZYA.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+<br />
+<br />
+
+<b> Step 18: Ping your VM </b> <br/>
+On your local computer go back to the command line and view the ping request you left running. You will now see that you local computer and ping your VM. This will make it easier for attackers to find our VM. <br/>
+<img src="https://imgur.com/V8EhaX4.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+<br />
+<br />
+
+<b> Step 19: Run the PowerShell Script </b> <br/>
+On your VM open PowerShell ISE and run the command we pasted earlier. After a few seconds you will see the failed RDP attempt we did earlier in the lab. This script is pulling information from the Event Viewer, specific to event ID 4625 and storing it in a file for later use. <br/>
+<img src="https://imgur.com/MONceva.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+On your VM open File Explorer and navigatte to C:\ProgramData\failed_rdp. (This file is hidden so you will need to view hidden items) <br/>
+<img src="https://imgur.com/zdVCCVL.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+Open failed_rdp.txt and see the data being pulled from the event viewer. (Everything highlighed blue is sample data to use later in the lab.) The last entry being when you failed to RDP into the VM. <br/>
+<img src="https://imgur.com/3WXDZPB.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+<br />
+<br />
+
+<b> Step 20: *optional* Wait</b> <br/>
+Wait until you start to recieve more outputs in PowerShell. Congratulations, your VM was found by attackers who are attempting to brute force into it. <br/>
+<img src="https://imgur.com/94Qgzsc.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+<br />
+<br />
+
+<b> Step 21: Copy the data </b> <br/>
+On your VM copy the data in the failed_rdp.txt file and save it to your local machine in a text file for use in the next step. <br/>
+<img src="https://imgur.com/9GZBqlY.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+<img src="https://imgur.com/sjr5S3G.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+<br />
+<br />
+
 
 <!--
  ```diff
