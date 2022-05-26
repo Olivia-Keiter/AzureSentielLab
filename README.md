@@ -18,7 +18,7 @@ Project consists of a setup of Azure Sentinel and an unsecured virtual machine (
 
 <p align="center">
 Step 1: <br/>
-<img src="Photo" height="80%" width="80%" alt="First photo here"/>
+<img src="Create a Resource Group" height="80%" width="80%" alt="https://imgur.com/TfwVTtN"/>
 <br />
 <br />
 
