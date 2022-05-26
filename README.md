@@ -17,8 +17,14 @@ Project consists of a setup of Azure Sentinel and an unsecured virtual machine (
 <h2>Program walk-through:</h2>
 
 <p align="center">
-Step 1: <br/>
-<img src="Create a Resource Group" height="80%" width="80%" alt="https://imgur.com/TfwVTtN"/>
+Launch the utility: <br/>
+<img src="https://imgur.com/a/EEgWHF8" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+
+<p align="center">
+Step 1: Create a Resource Group<br/>
+<img src="https://imgur.com/a/EEgWHF8" height="80%" width="80%" alt="Create a Resource Group"/>
 <br />
 <br />
 
