@@ -1,32 +1,56 @@
-<h1>Azure Sentiel Lab</h1>
+<h1>Azure Sentinel Home Lab</h1>
 
 <h2>Description</h2>
-Project consists of a setup of Azure Sentinel and an unsecured virtual machine (honeypot) to view live attacks (RDP brute force) from all over the world. Using a custom PowerShell script from Josh Madakor on youtube to lookup the attackers geolocation and plot it on the Azure Sentinel map.
+Project consists of using Azure Sentinel as a SIEM, connecting it to a unsecured virtual machine (honey pot) and using a custom PowerShell script to view live attacks (RDP brute force) from all over the world.
 <br />
 
 
-<h2>Utilities Used</h2>
+<h2>Languages and Utilities Used</h2>
 
-- <b>API Site</b> 
+- <b>PowerShell</b> 
+- <b>API Site</b>
 
 <h2>Environments Used </h2>
 
-- <b>Microsoft Azure Portal</b>
-- <b>Windows 10 Virtual Machine</b> (21H2)
+- <b>Windows 10</b> (21H2)
+- <b>Azure Portal</b>
+- 
+<h2>Progect walk-through:</h2>
 
-<h2>Program walk-through:</h2>
-
-<p align="center">
-Launch the utility: <br/>
-<image source= "https://imgur.com/a/9pnLMlp.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+ <b> Step 1: Create a Resource Group</b> <br/>
+In Azure create a Resource that you will use throughout this project. All resources you create will go in this resource group. <br/>
+<img src=https://imgur.com/Z5RZXJB.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
 <br />
 <br />
-
-<p align="center">
-Step 1: Create a Resource Group<br/>
-<img src="https://imgur.com/a/EEgWHF8" height="80%" width="80%" alt="Create a Resource Group"/>
+                                                                                           
+<b> Step 2: Create a VM</b> <br/>
+In Azure create a Virtual Machine. This VM is going to act as a "honeypot" so we want it to be unsecured so it is more easily discovered by attackers. Select "Advanced" for "NIC network security group" and click "Create new." <br/>
+<img src="https://imgur.com/6JmPfBi.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
 <br />
 <br />
+                                                                                            
+<b> Step 3: Edit the NIC NSG</b> <br/>
+In Azure remove the default inbound rule and add a new inbound rule. Since we want this VM to be discoverable create the new rule to allow any/any inbound traffic and set the priority low (ex: 100) <br/>
+<img src="https://imgur.com/syB8VS9.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+<br />
+<br />
+                                                                                              
+<b> Step 4: </b> <br/>
+In Azure create a Virtual Machine. This VM is going to act as a "honeypot" so we want it to be unsecured so it is more easily discovered by attackers <br/>
+<img src="https://i.imgur.com/cdFHBiU.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+<br />
+<br />
+Wait for process to complete (may take some time):  <br/>
+<img src="https://i.imgur.com/JL945Ga.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+<br />
+<br />
+Sanitization complete:  <br/>
+<img src="https://i.imgur.com/K71yaM2.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+<br />
+<br />
+Observe the wiped disk:  <br/>
+<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+</p>
 
 <!--
  ```diff
