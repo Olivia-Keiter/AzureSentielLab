@@ -14,12 +14,12 @@ Project consists of using Azure Sentinel as a SIEM, connecting it to a unsecured
 
 - <b>Windows 10</b> (21H2)
 - <b>Azure Portal</b>
-- 
+
 <h2>Progect walk-through:</h2>
 
- <b> Step 1: Create a Resource Group</b> <br/>
+<b> Step 1: Create a Resource Group</b> <br/>
 In Azure create a Resource that you will use throughout this project. All resources you create will go in this resource group. <br/>
-<img src=https://imgur.com/Z5RZXJB.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+<img src="https://imgur.com/Ko8OPH7.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
 <br />
 <br />
                                                                                            
@@ -29,13 +29,18 @@ In Azure create a Virtual Machine. This VM is going to act as a "honeypot" so we
 <br />
 <br />
                                                                                             
-<b> Step 3: Edit the NIC NSG</b> <br/>
+<b> Step 3: Add a username and password</b> <br/>
+In Azure create a username and password for your VM. Be sure to remember this as you will need it to RDP into your VM later. <b>*(TIP: Avoid common usernames like: Admin, Administrator, or User)*</b> <br/>
+<img src="https://imgur.com/FtJVbm7.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+<br />
+<br />                                                                                            
+<b> Step 4: Edit the NIC NSG</b> <br/>
 In Azure remove the default inbound rule and add a new inbound rule. Since we want this VM to be discoverable create the new rule to allow any/any inbound traffic and set the priority low (ex: 100) <br/>
 <img src="https://imgur.com/syB8VS9.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
 <br />
 <br />
                                                                                               
-<b> Step 4: </b> <br/>
+<b> Step 5: </b> <br/>
 In Azure create a Virtual Machine. This VM is going to act as a "honeypot" so we want it to be unsecured so it is more easily discovered by attackers <br/>
 <img src="https://i.imgur.com/cdFHBiU.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
 <br />
