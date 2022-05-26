@@ -190,16 +190,43 @@ Highlight the latitude input. This will open the field value box. Name the field
 <br />
 
 <b> Step 26: Check Search Results </b> <br/>
-Verify the search results by checking each entry and verifying that the "laitude" output is highlighted. If any of the etries are incorrect, fix highlight the correct output. Once complete click "save extraction."
+Verify the search results by checking each entry and verifying that the "laitude" output is highlighted. If any of the etries are incorrect, fix highlight the correct output. Once complete click "save extraction."<br/>
 <img src="https://imgur.com/mx5uPlr.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
 <br />
 <br />
 
-<b> Step 26: Repeat  </b> <br/>
-Repete steps 25-26 for each output: longitude, sourcehost, state, country, label and timestamp. Remembering to change the field type for each entry.
+<b> Step 27: Repeat  </b> <br/>
+Repeat steps 25-26 for each output: longitude, destinationhost sourcehost, state, country, label and timestamp. Remembering to change the field type for each entry.<br/>
 <img src="https://imgur.com/hMgr0Ua.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
 <br />
 <br />
+
+<b> Step 28: Go to Sentinel  </b> <br/>
+In Azure, Navigate to Microsoft Sentinel>Workbooks. Click "Edit" and remove the two existing widgets. <br/>
+<img src="https://imgur.com/wlVaSQB.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+<br />
+<br />
+
+<b> Step 29: Add new Workbook  </b> <br/>
+In workbooks add a new workbook running the following script: FAILED_RDP_w_GEO_CL | summarize event_count=count() by sourcehost_CF, latitude_CF, longitude_CF, country_CF, label_CF, destinationhost_CF | where destinationhost_CF != "samplehost" | where sourcehost_CF != "". <br/>
+<img src="https://imgur.com/icIRsov.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+<br />
+<br />
+
+<b> Step 30: Make it a Map </b> <br/>
+Change the visualization type to "Map" and adjust map settings to fit how you would like the attacks to appear. <br/>
+<img src="https://imgur.com/icIRsov.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+<br />
+<br />
+
+<b> Step 31: Enjoy Your Map </b> <br/>
+From here you can see the attacks plotted on the map by lat/long and the event count.<br/>
+<img src="https://imgur.com/ky3YR3n.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+<br />
+<br />
+
+<b> Step 32: Delete your Resource Group </b> <br/>
+Always be sure to delete your resource group when you're done running at home labs to avoid incurring charges from Microsoft. 
 
 <!--
  ```diff
