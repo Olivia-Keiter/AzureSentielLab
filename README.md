@@ -140,7 +140,7 @@ Open failed_rdp.txt and see the data being pulled from the event viewer. (Everyt
 <br />
 <br />
 
-<b> Step 20: *optional* Wait</b> <br/>
+<b> Step 20: *OPTIONAL* Wait</b> <br/>
 Wait until you start to recieve more outputs in PowerShell. Congratulations, your VM was found by attackers who are attempting to brute force into it. <br/>
 <img src="https://imgur.com/94Qgzsc.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
 <br />
@@ -153,6 +153,29 @@ On your VM copy the data in the failed_rdp.txt file and save it to your local ma
 <br />
 <br />
 
+<b> Step 22: Create a Custom Log</b> <br/>
+On your local computer, back in Azure go to Log Analytics Workspace>Logs and add a new custom log. Select the failed_rdp.txt file from the last setep as the sample log, click next. View the next page and ensure the record delimeter is set to "New line."<br/>
+<img src="https://imgur.com/uoYuPSr.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+View the next page and ensure the record delimeter is set to "New line."<br/>
+<img src="https://imgur.com/6wqAuLm.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+Select "windows" as the type and "C:\programData\failed_rdp.log" as the path. This is the path to the log on your VM. <br/>
+<img src="https://imgur.com/mvjiAZy.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+Give the custom log a name. I chose "FAILED_RDP_w_GEO" see that "_CL" is added to the end of the log name and create the custom log. <br/>
+<img src="https://imgur.com/dF8C6rg.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+<br />
+<br />
+
+<b> Step 23: View Custom Log </b> <br/>
+Once the log is created the name will show in custom tables almost immedietly. However, it will take ~15 minutes for it to sync with Azure. Now is a good time to take a break as you cannot move on in the lab until the data has synced to azure.<br/>
+<img src="https://imgur.com/nZLwUYq.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+<br />
+<br />
+
+<b> Step 24: Run the Custom Log </b> <br/>
+Navigate to your workspace then select Logs. Run your new custom log. From here you can see each output listed under results. <br/>
+<img src="https://imgur.com/LGoXNcu.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+<br />
+<br />
 
 <!--
  ```diff
