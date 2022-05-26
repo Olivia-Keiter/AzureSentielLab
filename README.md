@@ -177,6 +177,30 @@ Navigate to your workspace then select Logs. Run your new custom log. From here 
 <br />
 <br />
 
+<b> Step 25: Create Custom Fields </b> <br/>
+Right click on one of the entries and click "Extract fields from..." <br/>
+<img src="https://imgur.com/HSHsZxV.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+<br />
+<br />
+
+<b> Step 26: Extract Data </b> <br/>
+Highlight the latitude input. This will open the field value box. Name the field title "latitude_CL" and set the field type to numeric. Click Extract.<br/>
+<img src="https://imgur.com/uq7p3WN.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+<br />
+<br />
+
+<b> Step 26: Check Search Results </b> <br/>
+Verify the search results by checking each entry and verifying that the "laitude" output is highlighted. If any of the etries are incorrect, fix highlight the correct output. Once complete click "save extraction."
+<img src="https://imgur.com/mx5uPlr.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+<br />
+<br />
+
+<b> Step 26: Repeat  </b> <br/>
+Repete steps 25-26 for each output: longitude, sourcehost, state, country, label and timestamp. Remembering to change the field type for each entry.
+<img src="https://imgur.com/hMgr0Ua.png" height="80%" width="80%" alt="Azure Sentinel Steps"/>
+<br />
+<br />
+
 <!--
  ```diff
 - text in red
