@@ -18,7 +18,7 @@ Project consists of a setup of Azure Sentinel and an unsecured virtual machine (
 
 <p align="center">
 Launch the utility: <br/>
-<img src="https://imgur.com/a/EEgWHF8" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<image source= "https://imgur.com/a/9pnLMlp.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 
